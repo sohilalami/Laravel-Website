@@ -15,15 +15,16 @@
 <header>
     <h2>
     @section('header')
-        De Header
+        TITEL
     @show
     </h2>
     <img src="{{ asset('images/logo.png') }}" />
 </header>
-    
+
 <nav>
    <ul>
        <li><a href="{{ route('homepage') }}">Home</a></li>
+       <li><a href="{{ route('product.add') }}">Producten</a></li>
        <li><a href="{{ route('about-us') }}">About Us</a></li>
        <li><a href="{{ route('show-name', ['name' => 'henkie']) }}">Show a name</a></li>
    </ul>
