@@ -21,4 +21,10 @@ Homepage
     {{ $i }}<br />
 @endfor
 
+<h2>Companies</h2>
+
+<ol>
+@foreach($companies as $company)
+        <li><strong>{{ $company->name}}, {{ $company->address}}</strong></li>
+@endforeach
 @endsection

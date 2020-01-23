@@ -14,7 +14,13 @@
 use App\Http\Controllers\HomeControllers;
 
 Route::get('/', 'HomeController@showHome')->name('homepage');
+
 Route::get('/over-ons-bedrijf', 'HomeController@showAboutUs')->name('about-us');;
+
 Route::get('/hallo/{name}', 'HomeController@showName ')->name('show-name');;
+
 Route::get('/product/create', 'ProductController@create')->name('product.add');
 Route::post('/product/create', 'ProductController@store')->name('product.store');
+
+Route::get('/bedrijven', 'CompanyController@list')->name('company.list');
+Route::get('/bedrijven/{id}', 'CompanyController@details')->name('company.details');

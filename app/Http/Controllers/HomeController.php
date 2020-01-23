@@ -16,11 +16,11 @@ class HomeController extends Controller
            'MacBook Pro'
        ];
 
-    
+       $companies = DB::select('select * from companies');
+
         return view('home', [
             'producten' => $products,
-            'companies' => $companies
-        ]);
+            'companies' => $companies]);
    }
 
    public function showAboutUs()
