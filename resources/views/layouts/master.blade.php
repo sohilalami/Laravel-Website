@@ -16,7 +16,7 @@
 <header>
     <h2>
     @section('header')
-        TITEL
+        LARAVEL WEBSITE VAN SOHIL
     @show
     </h2>
     <img src="{{ asset('images/logo.png') }}" />

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -14,8 +15,12 @@ class HomeController extends Controller
            'Playstation',
            'MacBook Pro'
        ];
-       
-       return view('home', ['producten' => $products]);
+
+    
+        return view('home', [
+            'producten' => $products,
+            'companies' => $companies
+        ]);
    }
 
    public function showAboutUs()
