@@ -10,17 +10,21 @@ class HomeController extends Controller
     public function showHome()
    {
        $products = [
-           'Autoradio',
-           'Cd speler',
-           'Playstation',
-           'MacBook Pro'
+           'Playstation 3',
+           'Nintendo WII',
+           'Playstation 4',
+           'X BOX 360'
        ];
 
-       $companies = DB::select('select * from companies');
+
+ $companies = DB::select('select * from companies');
+    //    dd($companies);
+    //    return abort('test');
 
         return view('home', [
             'producten' => $products,
-            'companies' => $companies]);
+            'companies' => $companies,
+        ]);
    }
 
    public function showAboutUs()
@@ -28,8 +32,5 @@ class HomeController extends Controller
        return view('aboutus');
    }
 
-   public function showName($name)
-   {
-       return view('showname', ['naam' => $name]);
-   }
+
 }
