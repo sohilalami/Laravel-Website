@@ -19,7 +19,7 @@
         LARAVEL WEBSITE VAN SOHIL
     @show
     </h2>
-    <img src="{{ asset('images/logo.png') }}" />
+    <img src="{{ asset('images/logo.png') }}" height="50" width="900"/>
 </header>
 
 <nav>

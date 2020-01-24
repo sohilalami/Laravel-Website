@@ -1,13 +1,13 @@
 body{
-  background-color: #838383;
+  background-color: #ffb5b5;
   font-family: Arial;
-  color: #333;
+  color: rgb(82, 28, 70);
 }
 
 header, main, nav, footer{
-  background: #ffffff;
+  background: #96ffca;
   padding: 20px;
-  border: 2px solid black;
+  border: 2px solid rgb(0, 114, 9);
   margin: 20px;
 }
 a{
