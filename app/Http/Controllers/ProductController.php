@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -13,7 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+
+        return view('product.list', ['products' => $products]);
     }
 
     /**
@@ -35,7 +38,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate(
+        // Hier de gegevens opslaan in de database via de product class / model
+
+       $productData = $request->validate(
             [
                 'title' => 'required|min:3',
                 'description' => 'required|min:10',
@@ -44,9 +49,18 @@ class ProductController extends Controller
             ]
         );
 
-        // Hier de gegevens opslaan in de database via de product class / model
+        // $product = new Product();
 
-        return 'GEGEVENS IN DE DATABASE OPSLAAN';
+        // $product->title = $productData['title'];
+        // $product->description = $productData['description'];
+        // $product->price = $productData['price'];
+        // $product->pub_date = $productData['pub_date'];
+
+        // $product->save();
+
+        $product = Product::create($productData);
+
+        return 'GEGEVENS IN DE DATABASE OPGESLAGEN';
     }
 
     /**
