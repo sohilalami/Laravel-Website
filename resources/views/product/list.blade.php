@@ -16,4 +16,9 @@
    </tr>
     @endforeach
   </table>
+
+  <p>{{ $products->previousPageUrl() }}</p>
+
+  {{ $products->links() }}
+
 @endsection

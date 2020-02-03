@@ -26,6 +26,7 @@
    <ul>
        <li><a href="{{ route('homepage') }}">Home</a></li>
        <li><a href="{{ route('product.add') }}">Producten</a></li>
+       <li><a href="{{ route('product.list') }}">Onze Products</a></li>
        <li><a href="{{ route('about-us') }}">About Us</a></li>
        <li><a href="{{ route('company.list') }}">Bedrijven</a></li>
    </ul>
