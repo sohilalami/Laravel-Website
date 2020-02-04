@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@showHome')->name('homepage');
 
+Route::prefix('/admin')->middleware('auth')->group(function () {
 Route::get('/about', 'HomeController@showAboutUs')->name('about-us');;
 
 Route::get('/products','ProductController@index')->name('product.list');
@@ -21,3 +22,7 @@ Route::post('/product/create', 'ProductController@store')->name('product.store')
 
 Route::get('/bedrijven', 'CompanyController@list')->name('company.list');
 Route::get('/bedrijven/{id}', 'CompanyController@details')->name('company.details');
+});
+
+
+Auth::routes();

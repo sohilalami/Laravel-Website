@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Product;
 
 class ProductSeeder extends Seeder
 {
@@ -11,6 +12,7 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create();
         // Hier gaan we 200 producten genereren met random data
 
         for($i = 0; $i < 200; $i++){

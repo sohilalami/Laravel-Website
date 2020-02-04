@@ -39,7 +39,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-        // Hier de gegevens opslaan in de database via de product class / model
+
 
        $productData = $request->validate(
             [
@@ -47,8 +47,14 @@ class ProductController extends Controller
                 'description' => 'required|min:10',
                 'price' => 'required|numeric|gt:0',
                 'pub_date' => 'required|after_or_equal:today'
+                'image' => 'image'
             ]
         );
+
+        $newFilename = $productData['image']->store('products','public');
+        $productData['image'] = $newFilename;
+
+        dd($productData);
 
         // $product = new Product();
 
@@ -72,7 +78,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('product.details', ['product' => $product]);
     }
 
     /**
